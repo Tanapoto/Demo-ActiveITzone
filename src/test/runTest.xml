@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ActiveItZone">
+
+    <test name="Selenium_PJ_Test">
+        <parameter name="browserType" value="chrome"/>
+        <parameter name="URL"
+                   value="https://demo.activeitzone.com/ecommerce/login"/>
+        <classes>
+            <class name="TestCase.LoginTest"/>
+            <class name="TestCase.AddNewProdTest"/>
+            <class name="TestCase.ListProdsTest"/>
+            <class name="TestCase.EditCreatedProdTest">
+
+        </class>
+        </classes>
+    </test>
+</suite>
