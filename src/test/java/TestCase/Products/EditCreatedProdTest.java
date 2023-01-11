@@ -1,4 +1,4 @@
-package TestCase;
+package TestCase.Products;
 
 import Setup.baseSetUp.BaseTest;
 import Setup.project.dataprovider.EditProdDataProvider;

@@ -236,7 +236,7 @@ public class EditCreatedProdPage {
 
 
 
-    public ListProdsPage editSelectProdVariation(){
+    public EditCreatedProdPage editSelectProdVariation(){
         //Handle color dropdown
         Assert.assertTrue(WebUI.waitForElementHasAttribute(colorDropdown,"multiple"));
         WebUI.clickElementWithJs(btnSwitchColorEditProd);
@@ -303,10 +303,10 @@ public class EditCreatedProdPage {
 //        Assert.assertTrue(WebUI.verifyElementTextContains(selectedOption,"1"));
         WebUI.deselectOptionByValue(attributeDropdown,"1");
         WebUI.sleep(2);
-        return new ListProdsPage();
+        return new EditCreatedProdPage();
     }
 
-    public ListProdsPage editVideoLink(int rowNum){
+    public EditCreatedProdPage editVideoLink(int rowNum){
         excelHelpers.setExcelFile(FrameworkConstants.EXCEL_DATA_FILE_PATH, "Edit_Created_Prod");
         WebUI.selectOptionByValue(videoProviderDropdown,"dailymotion");
         WebUI.selectOptionByValue(videoProviderDropdown,"vimeo");
@@ -314,9 +314,9 @@ public class EditCreatedProdPage {
         WebUI.sleep(1);
         WebUI.clearText(videoLinkTbx);
         WebUI.setText(videoLinkTbx,excelHelpers.getCellData(rowNum,EditProdModal.getProdVideoLink()));
-        return new ListProdsPage();
+        return new EditCreatedProdPage();
     }
-    public ListProdsPage editPriceStock(int rowNum){
+    public EditCreatedProdPage editPriceStock(int rowNum){
         excelHelpers.setExcelFile(FrameworkConstants.EXCEL_DATA_FILE_PATH, "Edit_Created_Prod");
 
         Assert.assertTrue(WebUI.verifyHTML5RequiredField(unitPriceTbx));
@@ -342,9 +342,9 @@ public class EditCreatedProdPage {
         WebUI.clearText(externalLinkTextTbx);
         WebUI.setText(externalLinkTextTbx,excelHelpers.getCellData(rowNum,EditProdModal.getExternalTextLink()));
 
-        return new ListProdsPage();
+        return new EditCreatedProdPage();
     }
-    public ListProdsPage editFilePDF(){
+    public EditCreatedProdPage editFilePDF(){
         excelHelpers.setExcelFile(FrameworkConstants.EXCEL_DATA_FILE_PATH, "Edit_Created_Prod");
         WebUI.scrollToElement(prodDescription);
         // Upload PDF file
@@ -372,16 +372,16 @@ public class EditCreatedProdPage {
         WebUI.sleep(5);
 //        Assert.assertTrue(WebUI.verifyElementTextContains(btnOpenScreenUploadPDF,"1"));
 
-        return new ListProdsPage();
+        return new EditCreatedProdPage();
     }
 
-    public ListProdsPage editProdDescription(int rowNum){
+    public EditCreatedProdPage editProdDescription(int rowNum){
         excelHelpers.setExcelFile(FrameworkConstants.EXCEL_DATA_FILE_PATH, "Edit_Created_Prod");
         WebUI.clearText(prodDescription);
         WebUI.setText(prodDescription,excelHelpers.getCellData(rowNum,EditProdModal.getProdDescription()));
-        return new ListProdsPage();
+        return new EditCreatedProdPage();
     }
-    public ListProdsPage editSEOMeta(int rowNum){
+    public EditCreatedProdPage editSEOMeta(int rowNum){
         excelHelpers.setExcelFile(FrameworkConstants.EXCEL_DATA_FILE_PATH, "Edit_Created_Prod");
 
         Assert.assertFalse(WebUI.verifyHTML5RequiredField(metaTitle));
@@ -399,17 +399,17 @@ public class EditCreatedProdPage {
         WebUI.clickElement(btnAddFile);
         WebUI.sleep(5);
 
-        return new ListProdsPage();
+        return new EditCreatedProdPage();
     }
-    public ListProdsPage editShippingDays(int rowNum){
+    public EditCreatedProdPage editShippingDays(int rowNum){
         excelHelpers.setExcelFile(FrameworkConstants.EXCEL_DATA_FILE_PATH, "Edit_Created_Prod");
         WebUI.clearText(shippingDayTbx);
         WebUI.setText(shippingDayTbx,excelHelpers.getCellData(rowNum,EditProdModal.getShippingDays()));
-        return new ListProdsPage();
+        return new EditCreatedProdPage();
     }
-    public ListProdsPage saveEdit(){
+    public EditCreatedProdPage saveEdit(){
         WebUI.clickElement(btnSaveEdit);
-        return new ListProdsPage();
+        return new EditCreatedProdPage();
     }
     public ListProdsPage checkEditProdSuccessfully(){
         WebUI.waitForPageLoaded();

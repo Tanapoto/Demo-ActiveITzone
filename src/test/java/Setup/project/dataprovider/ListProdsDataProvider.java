@@ -16,7 +16,7 @@ public class ListProdsDataProvider {
     }
 
     @Test(dataProvider = "getListProdsDataHashTable")
-    public void testGetLoginData(Hashtable<String, String> data) {
+    public void testGetProdsData(Hashtable<String, String> data) {
         System.out.println("listProds.Sellers = " + data.get(ListProdsModal.getSellers()));
         System.out.println("listProds.KeywordSearch = " + data.get(ListProdsModal.getKeywordSearch()));
 

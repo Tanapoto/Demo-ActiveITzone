@@ -23,7 +23,7 @@ public class ListProdsPage {
 
     public By btnCancelDelete = ObjectUtils.getByLocatorFromConfig("btnCancelDelete");
     public By btnConfirmDelete = ObjectUtils.getByLocatorFromConfig("btnConfirmDelete");
-    public By messDeleteSuccess = ObjectUtils.getByLocatorFromConfig("messDeleteSuccess");
+    public By messDeleteProdSuccess = ObjectUtils.getByLocatorFromConfig("messDeleteProdSuccess");
 
 
     ExcelHelpers excelHelpers;
@@ -153,7 +153,7 @@ public class ListProdsPage {
                 WebUI.clickElement(btnDelete);
                 WebUI.clickElement(btnConfirmDelete);
                 WebUI.waitForPageLoaded();
-                Assert.assertTrue(WebUI.verifyElementPresent(messDeleteSuccess));
+                Assert.assertTrue(WebUI.verifyElementPresent(messDeleteProdSuccess));
                 Assert.assertFalse(WebUI.verifyElementTextEquals(prodName, oldProdNameText));
             }
         }
